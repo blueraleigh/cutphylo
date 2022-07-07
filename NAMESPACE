@@ -1,0 +1,5 @@
+useDynLib(cutphylo, .registration=TRUE)
+exportPattern("^[[:alpha:]]+")
+
+S3method(cut, phylo)
+S3method(plot, cutphylo)
