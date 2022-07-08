@@ -35,13 +35,15 @@ cut.phylo = function(x, y, k, option=c("arithmetic","phylogenetic"), ...)
     y = y[x$tip.label, ]
     parent = x$edge[,1]-1L
     child = x$edge[,2]-1L
-    brlen = x$edge.length
+    edgelen = x$edge.length
     nedge = length(parent)
 
-    if (is.null(brlen))
-        brlen = rep(1, nedge)
+    if (is.null(edgelen))
+        edgelen = rep(1, nedge)
 
-    brlen = brlen[match(1:(ntip+nnode), x$edge[,2], nomatch=0)]
+    ord = match(1:(ntip+nnode), x$edge[,2], nomatch=0)
+    brlen = numeric(ntip+nnode)
+    brlen[-(ntip+1)] = edgelen[ord]
 
     w = numeric(ntip+nnode)
     w[1:ntip] = 1

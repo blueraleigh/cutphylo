@@ -271,13 +271,12 @@ static void phyloweights(
     int p;
     const int *kid;
     double *v = malloc((ntip+nnode)*sizeof(*v));
-    for (i = 0; i < ntip; ++i)
-        v[i] = brlen[i];
+    memcpy(v, brlen, (ntip+nnode)*sizeof(*v));
     for (i = 0; i < nedge; i += 2)
     {
         p = parent[i];
         kid = child + i;
-        v[p] = brlen[p] + (v[kid[0]]*v[kid[1]]) / (v[kid[0]]+v[kid[1]]);
+        v[p] += (v[kid[0]]*v[kid[1]]) / (v[kid[0]]+v[kid[1]]);
     }
     w[ntip] = (double)ntip;
     for (i = nedge-1; i >=0; i -= 2)
