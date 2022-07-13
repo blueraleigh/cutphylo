@@ -87,8 +87,9 @@ cut.phylo = function(x, y, k, option=c("arithmetic","phylogenetic"), ...)
         for (j in 1:i)
         {
             idx = which(cutset[1:ntip,i] == j)
+            jj = which(cutset[cuts[1:i],i] == j)
             m = colSums(sweep(y[idx,,drop=FALSE], 1, w[idx], "*")) / sum(w[idx])
-            R2[j, i] = sum(w[idx]) * sum((m - GM)^2) / SSE[1]
+            R2[jj, i] = sum(w[idx]) * sum((m - GM)^2) / SSE[1]
         }
     }
 
