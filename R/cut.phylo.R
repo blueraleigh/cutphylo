@@ -29,7 +29,7 @@
 #' \item{r.squared}{A numeric vector of length k. The variance
 #' explained by each partition.}
 #' \item{subtree.r.squared}{A numeric k-by-k matrix. The variance
-#' explained by each partition subtree in each partition.}
+#' explained by each subtree in each partition.}
 #' \item{weights}{A numeric vector of length ape::Ntip(x). The weights
 #' used to partition the sums of squares.}
 #' \item{cuts}{An integer vector with the indices of the branches that 
