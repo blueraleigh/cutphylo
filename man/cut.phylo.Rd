@@ -20,6 +20,12 @@ that best explain the variance of \code{y}. Currently, a greedy
 search algorithm is used that incrementally builds a solution
 from the previous best solution. I.e., the solution for k=3 uses 
 the solution for k=2 and so on.
+
+When \code{option="phylogenetic"}, the function partitions a
+weighted sum of squares by computing a set of tip weights, \code{w},
+such that \code{sum(w*y)/sum(w)} is equal to the phylogenetic mean
+of \code{y} under a Brownian motion model. These weights are returned
+as part of the result.
 }
 \value{
 A list with components:
