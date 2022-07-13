@@ -1,11 +1,11 @@
 Package: cutphylo
 Type: Package
-Title: Optimal variance partitioning on a phylogeny
+Title: Sums of squares partitioning on a phylogeny
 Version: 1.0
 Date: 2022-06-30
 Author: Michael C. Grundler
 Maintainer: Michael C. Grundler <mcgrundler@gmail.com>
-Description: The cutphylo package finds the globally optimal partition of 
+Description: The cutphylo package tries to find an optimal partition of 
   the sums of squared errors among the subtrees of a phylogeny. Squared 
   errors can be computed using the regular arithmetic mean or the phylogenetic 
   mean.
