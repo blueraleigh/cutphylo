@@ -52,7 +52,7 @@ cut.phylo = function(x, y, k, option=c("arithmetic","phylogenetic"), ...)
     nnode = ape::Nnode(x)
     k = max(1L, min(ntip, as.integer(k)))
     x = reorder(x, "pruningwise")
-    y = y[x$tip.label, ]
+    y = y[x$tip.label, , drop=FALSE]
     parent = x$edge[,1]-1L
     child = x$edge[,2]-1L
     edgelen = x$edge.length
